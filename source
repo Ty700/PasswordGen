@@ -1,0 +1,30 @@
+/*
+* Author: Tyler Scotti
+* Description: Makes a password for the user given a first and last name + a 4 digit number
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+//Variable Declaration
+	string login;
+	string first;
+	string last;
+	int number;
+
+// User input
+   cout << "Enter in your first name: ";
+	   cin >> first;
+   cout << "Enter in your last name: ";
+	   cin >> last;
+	cout << "Enter in a 4 digit number: ";
+      cin >> number;
+//Combines first 5 of last name, first char of first name, and the last two digits
+	login = last.substr(0,5)+first.substr(0,1)+to_string(number%100);;
+	
+	cout << "Your login name: " << login << endl;
+	
+	return 0;
+}
